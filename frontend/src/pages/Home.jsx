@@ -8,7 +8,9 @@ import { twMerge } from 'tailwind-merge';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../utils/supabase';
 
-const WEBSOCKET_URL = "ws://localhost:8000/ws";
+const WEBSOCKET_URL = import.meta.env.PROD
+    ? "wss://advance-reasoning-with-sources.onrender.com/ws"
+    : "ws://localhost:8000/ws";
 
 // Utility for merging classes
 function cn(...inputs) {
