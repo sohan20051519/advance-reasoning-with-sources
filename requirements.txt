@@ -1,0 +1,13 @@
+langgraph
+langchain-google-genai
+tavily-python
+firecrawl-py
+supabase
+pydantic
+python-dotenv
+langchain-core
+langchain-core
+google-generativeai
+fastapi
+uvicorn
+websockets
