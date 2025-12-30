@@ -6,12 +6,17 @@ from main import build_graph
 
 app = FastAPI()
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+async def root():
+    return {"status": "ok", "message": "Reasoning Agent Server is running"}
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
