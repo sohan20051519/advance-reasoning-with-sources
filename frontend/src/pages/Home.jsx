@@ -122,8 +122,7 @@ export default function Home() {
         ws.current.onerror = (error) => {
             console.error("WS Error", error);
             setConnectionStatus('error');
-            addLog('error', "Connection failed.");
-            setIsSearching(false);
+            addLog('error', "Connection failed. Check console or backend logs.");
         };
 
         ws.current.onclose = () => {
@@ -161,7 +160,7 @@ export default function Home() {
             ws.current.close();
         } else if (data.type === 'error') {
             addLog('error', data.message);
-            setIsSearching(false);
+            // Do not close the view so user can read the error
         }
     };
 
